@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>eCommerce Prototype</title>
+		<meta name="description" content="A Masonry-powered grid layout with a motion hover effect on the grid items and a scrollable content view." />
+		<meta name="keywords" content="masonry, grid layout, hover effect, content preview, javascript, gsap, template, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" href="css/uikit.css" />
+
+		<!-- UIkit JS -->
+
+
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="loading" style="background: url('img/bg.svg') repeat-x">
+
+		<div class="uk-section-secondary uk-preserve-color">
+
+    <div class="nav-b" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-dark; top: 100">
+ 
+        <div class="uk-container uk-container-large">
+        
+        <nav class="uk-navbar-container nav-b" uk-navbar>
+
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a class="uk-navbar-item uk-logo" href="#"><img src="img/assets/tata-cliq-vector-logo.svg"></a></li>
+            
+           <li><a class="nav-ico" href="#">Fashion</a></li>
+            <li><a class="nav-ico" href="#">Electronics</a></li>
+            <li><a class="nav-ico" href="#">TV & Appliances</a></li>
+            <li><a class="nav-ico" href="#">Jwellery</a></li>
+                        <li><a class="nav-ico" href="#">More</a></li>
+
+
+        </ul>
+
+    </div>
+
+    <div class="uk-navbar-right">
+
+        <div class="uk-navbar-nav">
+    <form class="uk-search uk-search-large">
+    <span class="uk-search-icon"><img src="img/search.svg" class="search"></span>
+    <input class="uk-search-input" type="search" placeholder="Search...">
+</form>
+</div>
+    <div>
+            <ul class="uk-navbar-nav">
+                
+                <li><a class="nav-ico" href="#"><img src="img/cart.svg"> Cart</a></li>
+                 <li><a class="nav-ico" href="#">Sign in / Sign up</a></li>
+                
+            </ul>
+        </div>
+
+
+    </div>
+
+    <!-- <div class="uk-navbar-right">
+        <div class="uk-navbar-item">
+            <form action="javascript:void(0)">
+                <input class="uk-input uk-form-width-small" type="text" placeholder="Input">
+        <span uk-search-icon></span>
+            </form>
+        </div>
+
+        <ul class="uk-navbar-nav">
+            
+            <li><a class="nav-ico" href="#"><img src="img/cart.svg"> Cart</a></li>
+             <li><a class="nav-ico" href="#">Sign in / Sign up</a></li>
+            
+        </ul>
+
+    </div> -->
+
+</nav>
+</div>
+
+    </div>
+</div>
+
+<!-- navbar ends here -->
+
+
+<section class="main-banner">
+
+
+		<div class="uk-container uk-container-large"> 
+
+
+
+			<div class="uk-position-relative uk-visible-toggle uk-light uk-card-default" tabindex="-1" uk-slideshow="animation: scale; ratio: 12:3.5; autoplay: true; min-height: 250">
+
+    <ul class="uk-slideshow-items">
+        <li>
+            <img src="img/slide4.png" alt="" uk-cover>
+            
+        </li>
+        <li>
+            <img src="img/slide2.png" alt="" uk-cover>
+            
+        </li>
+        <li>
+            <img src="img/slide3.png" alt="" uk-cover>
+            
+        </li>
+         
+         
+       
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover black" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover black" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+</div>
+
+</div>
+
+
+
+</section>
+
+<!-- Header ends -->
+<div class="uk-container uk-margin uk-container-large">
+
+<div class="uk-child-width-1-3@s uk-grid-small" uk-grid>
+    <div class="uk-grid-item-match">
+        <div class="offer-height uk-card uk-card-default uk-card-body uk-cover-container uk-card-hover">
+            <img src="img/ad1.jpg" alt="" uk-cover>
+             <canvas width="600" height="300"></canvas>
+        </div>
+     </div>
+
+     <div class="uk-grid-item-match">
+        <div class="offer-height uk-card uk-card-default uk-card-body uk-cover-container uk-card-hover">
+            <img src="img/ad2.jpg" alt="" uk-cover>
+             <canvas width="600" height="300"></canvas>
+        </div>
+     </div>
+     
+     <div class="uk-grid-item-match">
+        <div class="offer-height uk-card uk-card-default uk-card-body uk-cover-container uk-card-hover">
+            <img src="img/ad3.jpg" alt="" uk-cover>
+
+             <canvas id="c" width="600" height="300"></canvas>
+        </div>
+     </div>
+
+
+    <!-- <div class="uk-grid-item-match">
+        <div class="uk-card uk-card-default uk-card-body offer">
+            
+        	<div class="glitch" data-text="Cliq Fashion">
+
+    <span class="glitch__color glitch__color--red">Cliq Fashion</span>
+    <span class="glitch__color glitch__color--blue">Cliq Fashion</span>
+    <span class="glitch__color glitch__color--green">Cliq Fashion</span>
+    <span class="glitch__main">Cliq Fashion</span>
+    <span class="glitch__line glitch__line--first"></span>
+    <span class="glitch__line glitch__line--second"></span>
+</div>
+
+<div class="glitch" data-text="End of Reason's Sale">
+
+    <span class="glitch__color glitch__color--red">End of Reason's Sale</span>
+    <span class="glitch__color glitch__color--blue">End of Reason's Sale</span>
+    <span class="glitch__color glitch__color--green">End of Reason's Sale</span>
+    <span class="glitch__main">End of Reason's Sale</span>
+    <span class="glitch__line glitch__line--first"></span>
+    <span class="glitch__line glitch__line--second"></span>
+</div>
+
+
+
+        </div>
+
+        <div class="uk-card uk-margin-top uk-card-default uk-card-body">
+            <h3>Heading</h3>
+            <p>
+                Lorem ipsum dolor sit amet.
+            </p>
+        </div>
+
+    </div> -->
+</div>
+
+
+</div>
+
+<div class="uk-container uk-container-large" >
+
+<div class="uk-card uk-card-default">
+
+<div class="uk-text-center" uk-grid>
+    <div class="uk-width-auto">
+        <div class="div-head div-label"><img src="img/phone.svg" alt="svg">
+
+
+        </div>
+    </div>
+    <div class="uk-width-expand div-head div-search">
+        <form class="uk-search uk-search-large">
+    <span class="div-search-icon" uk-search-icon></span>
+    <input class="uk-search-input" type="search" placeholder="Search...">
+</form>
+<a class="uk-button uk-button-default load-btn uk-border-rounded uk-align-center uk-box-shadow-hover-large" href="#"> View All</a>
+    </div>
+</div>
+
+<div uk-slider="center: true">
+
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+        <ul class="uk-slider-items uk-grid-small uk-child-width-1-5@s uk-grid-match uk-grid">
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/1.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">One Plus 7</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">Starting From ₹35,999*</div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/2.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">Macromax Canvas Pro</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">Starting From ₹12,999*</div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/3.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">Nokia L7</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">Starting From ₹15,699*</div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/4.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">One Plus 6 Pro</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">Starting From ₹14,899*</div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/5.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">Huwai Note</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">₹13,999*<span>₹13,120*</span></div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/6.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">Oppo V6</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">Starting From ₹10,199*</div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/7.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">Samsung Galaxy M20</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">Starting From ₹18,799*</div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            <li><a href="#">
+                <div class="uk-card uk-card-hover uk-card-body phones">
+                    <div class="uk-card-media-top">
+                        <img src="img/phones/8.jpg" alt="phones">
+                    </div>
+                    <div>
+                        <h3 class="uk-card-title">Samsung Galaxy M40</h3>
+                         <div class="specific">Black, 64 GB</div>
+                        <div class="price">Starting From ₹20,199*</div>
+                        <div class="emi">[EMI Start @ ₹451/Month* only]</div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small btn-nxt" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small btn-nxt" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+    </div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+<div class="uk-container uk-container-large" >
+
+
+
+
+<div class="uk-position-relative uk-visible-toggle logo" tabindex="-1" uk-slider>
+        <div class="uk-slider-container">
+
+
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-8@m uk-grid">
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/as.png" alt="">
+            <div><h3 class="logo-off">UPTO 60% OFF</h3></div>
+        </li>
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/ucb.png" alt="">
+            <div><h3 class="logo-off">FLAT 30% OFF</h3></div>
+
+        </li>
+         <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/wd.png" alt="">
+            <div><h3 class="logo-off">UPTO 50% OFF</h3></div>
+
+        </li>
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/clk.png" alt="">
+              <div><h3 class="logo-off">MIN 40% OFF</h3></div>
+
+        </li>
+       
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/ph.png" alt="">
+           <div><h3 class="logo-off">FLAT 70% OFF</h3></div>
+
+        </li>
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/mi.png" alt="">
+           <div><h3 class="logo-off">Starting @ ₹550</h3></div>
+
+        </li>
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/cs.png" alt="">
+            <div><h3 class="logo-off">MIN 30% OFF</h3></div>
+
+        </li>
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/li.png" alt="">
+             <div><h3 class="logo-off">UPTO 60% OFF</h3></div>
+
+        </li>
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/mf.png" alt="">
+             <div><h3 class="logo-off">MIN 30% OFF</h3></div>
+
+        </li>
+        <li class="uk-transition-toggle" tabindex="0">
+            <img class="uk-border-circle uk-box-shadow-small uk-box-shadow-hover-large" src="img/logo/hu.png" alt="">
+           <div><h3 class="logo-off">MIN 40% OFF</h3></div>
+
+        </li>
+       
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small btn-nxt-logo" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small btn-nxt-logo" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="uk-text-center"><img src="img/offer.svg" alt="offer"></div>
+
+
+
+<main>
+			
+			
+
+			<div class="grid-wrap" uk-scrollspy="target: > div > a; cls: uk-animation-fade; delay: 300">
+				<div class="grid">
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/1.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Exclusive Embroidered Kurtas</h3>
+						<div class="grid__item-number">20% <div class="small-in-offer">Discount</div></div>
+					
+
+
+
+
+					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/2.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Luxury Watches</h3>
+						<div class="grid__item-number">70% <div class="small-in-offer">Discount</div></div>
+					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/3.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Pearl Jewellery Sets</h3>
+                        <div class="grid__item-number">₹699<div class="small-in-offer">Starting From</div></div>					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/4.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Levis Denim Jackets</h3>
+						<div class="grid__item-number">50% <div class="small-in-offer">Discount</div></div>
+					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/5.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Active and Sportswear </h3>
+						<div class="grid__item-number">40% <div class="small-in-offer">Flat Discount</div></div>
+					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/6.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Kids Wear-Boys and Girls</h3>
+						<div class="grid__item-number">60% <div class="small-in-offer">Flat Discount</div></div>
+					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/7.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Exclusive Western Wear </h3>
+						<div class="grid__item-number">   80% <div class="small-in-offer">OFF-All Styles</div></div>
+					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/8.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">American Tourister</h3>
+						<div class="grid__item-number">40% <div class="small-in-offer">Discount</div></div>
+					</a>
+					<a href="#" class="grid__item">
+						<div class="grid__item-bg"></div>
+						<div class="grid__item-wrap">
+							<img class="grid__item-img" src="img/9.jpg" alt="Some image" />
+						</div>
+						<h3 class="grid__item-title">Leather Jackets</h3>
+
+
+						<div class="grid__item-number">80% <div class="small-in-offer">OFF-All Styles</div></div>
+					</a>
+					
+
+					</div>
+			</div><!-- /grid-wrap -->
+			
+			<button class="content__close">Close</button>
+		</main>
+
+
+
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/charming.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/demo.js"></script>
+	</body>
+</html>
